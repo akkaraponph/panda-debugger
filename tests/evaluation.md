@@ -43,6 +43,8 @@ Record `0–max` for each criterion and a short evidence note. Investigation tim
 
 The runnable cases can show whether an agent gathers runtime evidence. They still require blind baseline and Skill runs before making a performance claim.
 
+For another language or agent harness, use a real or runnable bug from that environment and the same rubric. Keep the available tools equal across baseline and Skill runs. The included Go, JavaScript, and Python cases are examples; they do not prove coverage of every language or tool.
+
 ## Answer key for reviewers only
 
 ### Nil pointer

@@ -10,7 +10,7 @@ Use this guide for a UI defect when the application can be opened safely. Browse
 4. Follow the event handler, state update, rendering logic, and API response in source code. For timing bugs, compare the order of user actions, requests, responses, and rendered updates. Use source maps or test traces when available.
 5. Check one competing explanation with a focused experiment, such as a changed input, slower response, or reload. Record what happened rather than assuming the browser proves the cause.
 
-Use the browser capabilities already available to the agent. Do not install a new browser tool or send live requests to an external service solely because this guide exists. If the page or browser is unavailable, inspect code and existing test artifacts, mark reproduction **Not run**, and state the missing observation.
+Use the browser capabilities available in the current harness; no specific browser or automation library is required. If the page or browser is unavailable, inspect code and existing test artifacts, mark browser reproduction **Not Run**, and state the missing observation. Do not install a tool or send live requests to an external service solely because this guide exists.
 
 ## Evidence to report
 

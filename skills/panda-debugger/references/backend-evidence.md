@@ -2,6 +2,8 @@
 
 Use this guide when a backend defect involves an API, database, queue, transaction, external service, or concurrent worker.
 
+Adapt the boundary checks to the actual system. An entry point may be an HTTP request, RPC call, command, scheduled job, event, or embedded function; storage may not be a SQL database. Use the logs, traces, state tools, and test harness that the project actually provides.
+
 ## Follow one failing operation
 
 1. Identify the request, job, or event ID and the input that triggered the failure. Correlate logs, traces, and database or queue observations for that operation when access is available.

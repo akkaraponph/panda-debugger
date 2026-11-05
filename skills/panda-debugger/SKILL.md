@@ -1,6 +1,6 @@
 ---
 name: panda-debugger
-description: Investigate software bugs using logs, source code, runtime behavior, and tests. Use for exceptions, failing tests, API errors, production incidents, or unexpected behavior when the root cause needs evidence before a fix.
+description: Investigate frontend and backend bugs across programming languages using available source, runtime, browser, log, and test evidence. Use for exceptions, failing tests, API errors, incidents, or unexpected behavior that needs a proven root cause.
 ---
 
 # PANDA DEBUGGER — Debugging Investigator
@@ -19,6 +19,12 @@ Move through these phases in order. Record what was observed at each phase; a ph
 6. **Verify after implementation.** Once implementation is authorized, add or update a regression test when it meaningfully captures the defect, run the original failure scenario and relevant tests, and check important edge cases. Record each actual command, result, and limitation. A proposed test is **Not Run** until executed; a fix is **verified** only after relevant checks pass.
 
 Do not run destructive commands, change production data, or trigger external side effects without authorization. Never invent logs, source locations, behavior, reproduction, or test results. Revise the analysis when new evidence contradicts it. If evidence remains insufficient, state exactly what is needed to resolve the uncertainty.
+
+## Language and tool adaptation
+
+Use the same evidence gates for any programming language or framework. Discover the project's actual entry points, build and test commands, dependency setup, and runtime from its code and documentation. Do not assume commands from the examples in this Skill apply to the user's project.
+
+Choose the most direct safe tools available in the current agent harness: source search and file reads for static tracing; the project's test runner or debugger for reproduction; a browser for observable UI behavior; and available logs, traces, database, queue, service, or connector tools for backend paths. Follow each tool's access rules; do not assume a shell or a named tool exists. A particular tool is never required just because it appears in an example. If a needed capability is missing, use existing artifacts, label the check **Not Run**, and explain the evidence gap. Do not claim the workflow can confirm a cause that the available tools cannot observe.
 
 ## Reporting
 
