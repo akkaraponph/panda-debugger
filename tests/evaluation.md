@@ -18,7 +18,7 @@ These three scenarios are synthetic text fixtures, not runnable applications. Th
 | Fix Correctness | 20 | Proposes a minimal change that closes the causal gap without introducing a new failure mode. |
 | Test Case Quality | 15 | Covers the original failure, normal path, and important boundary or concurrent path. |
 | Hallucination Prevention | 10 | Distinguishes facts from inference; does not claim reproduction, executed tests, or unseen configuration. |
-| Report Quality | 5 | Gives a clear, concise, reviewable report with confidence and remaining risks. |
+| Report Quality | 5 | Uses short root-cause bullets, clear B2-level English, confidence labels, and a concise account of remaining risks. |
 | **Total** | **100** | |
 
 Record `0–max` for each criterion and a short evidence note. Investigation time is recorded separately, not included in the 100 points. A polished format cannot compensate for an incorrect causal explanation.

@@ -16,6 +16,6 @@ The agent may implement a fix when the task requests it. If the request is only 
 
 ## Report and demo
 
-The [report template](references/report-template.md) covers the problem, evidence, reproduction, execution flow, root cause, fix, tests, verification, and remaining risks. The [investigation guide](references/investigation-guide.md) explains the evidence and phase gates.
+The [report template](references/report-template.md) starts with short root-cause bullets in clear B2-level English, then covers the problem, evidence, reproduction, execution flow, fix, tests, verification, and remaining risks. The [investigation guide](references/investigation-guide.md) explains the evidence and phase gates.
 
 Three synthetic [test scenarios](tests/scenarios) cover a nil pointer, a transaction lifecycle defect, and duplicate asynchronous processing. Use [the evaluation guide](tests/evaluation.md) to compare an agent with and without this Skill on the same scenario. The scenarios are text fixtures; they do not constitute a runnable application or proof that any bug was reproduced.

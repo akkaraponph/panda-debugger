@@ -22,6 +22,8 @@ Do not run destructive commands, change production data, or trigger external sid
 
 ## Reporting
 
+Write the report in clear B2-level English. Use short, direct sentences and common words. Keep code names exact, but explain technical terms when readers need them. Lead with a short **Root cause at a glance** bullet list: one plain-English sentence per cause, with its confidence label. Put the primary cause first. If the evidence supports several possible causes, list them as separate **possible causes** and name the check that would decide between them. Do not make a confirmed cause look like a guess.
+
 Use [the report template](references/report-template.md) for a substantial investigation. Keep each section concise and mark unavailable evidence explicitly. For a small bug, compress the presentation while preserving the causal trace, confidence level, verification status, and remaining risk.
 
 Read [the investigation guide](references/investigation-guide.md) when the defect involves multiple layers, transactions, asynchronous work, or conflicting evidence. It contains phase gates and examples of how to separate observations from inferences.

@@ -1,5 +1,14 @@
 # Bug Investigation Report
 
+Write in clear B2-level English. Prefer short sentences and familiar words. Keep code names exact. Explain a technical term briefly if it matters to the conclusion.
+
+## Root cause at a glance
+
+- **[CONFIRMED / LIKELY / UNKNOWN] Primary cause:** One plain-English sentence that explains why the bug happens.
+- **[LIKELY / UNKNOWN] Possible cause:** Add this bullet only when another explanation remains open. State the check needed to decide.
+
+Use one bullet per cause. Put the primary cause first. Do not show unused bullets in the final report.
+
 ## 1. Problem Summary
 
 State the defect, affected path, and conditions. Mark any unverified user report as reported.
@@ -26,14 +35,17 @@ Identify where the defect originates and where the symptom appears.
 
 ## 6. Root Cause Analysis
 
-For each material finding:
+Use one bullet per material cause, in the same order as the opening summary. Keep the first line short; add only the details needed to support it:
 
-- **Status:** CONFIRMED / LIKELY / UNKNOWN
-- **Cause or hypothesis:** …
-- **Supporting evidence:** …
-- **Contradicting evidence or missing check:** …
-- **Causal explanation:** …
-- **Contributing factors:** …
+- **[CONFIRMED / LIKELY / UNKNOWN] Primary cause: …**
+  - **Why this caused the bug:** …
+  - **Evidence:** …
+  - **What is still unclear:** … (omit if nothing remains unclear)
+- **[LIKELY / UNKNOWN] Possible cause: …**
+  - **Evidence for and against it:** …
+  - **Check needed:** …
+
+If a separate defect helped cause the failure, label it **Contributing factor**. Do not present possible causes as equal choices when the evidence identifies a primary cause.
 
 ## 7. Proposed Fix
 
