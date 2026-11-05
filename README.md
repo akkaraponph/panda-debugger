@@ -6,27 +6,7 @@ The workflow is language and framework agnostic. It uses the build commands, tes
 
 ## Install
 
-### Claude Code plugin
-
-```sh
-claude plugin marketplace add akkaraponph/panda-debugger
-claude plugin install panda-debugger@panda-debugger
-```
-
-To update, run `claude plugin marketplace update panda-debugger`, then `claude plugin update panda-debugger@panda-debugger`. Start a new session to use the updated files.
-
-### Codex plugin
-
-```sh
-codex plugin marketplace add akkaraponph/panda-debugger
-codex plugin add panda-debugger@panda-debugger
-```
-
-To update, run `codex plugin marketplace upgrade panda-debugger`, then repeat `codex plugin add panda-debugger@panda-debugger`. Start a new session to use the updated files.
-
-### Manual copy for Codex or Claude Code
-
-Run these commands from the directory where you want to clone the repository. They copy the same Skill to Codex and Claude Code:
+Run these commands from the directory where you want to clone the repository. They install the Skill for Codex and Claude Code:
 
 ```sh
 git clone https://github.com/akkaraponph/panda-debugger.git
@@ -40,11 +20,11 @@ rsync -a skills/panda-debugger/ "$HOME/.claude/skills/panda-debugger/"
 
 Codex reads the Skill from `$CODEX_HOME/skills/panda-debugger` (or `~/.codex/skills/panda-debugger` when `CODEX_HOME` is unset). Claude Code reads it from `~/.claude/skills/panda-debugger`. In each directory, `SKILL.md` must be at the root alongside `references/`.
 
-To update an existing installation, run `git pull --ff-only` in the clone, set `PANDA_CODEX_SKILLS` again, and repeat the two `rsync` commands above. Start a new agent session to use the updated files.
+To update an existing installation, run `git pull --ff-only` in the clone, then repeat the `PANDA_CODEX_SKILLS`, `mkdir`, and `rsync` commands above. Start a new agent session to use the updated files.
 
 ## Use
 
-Invoke `$panda-debugger` in Codex, `/panda-debugger:panda-debugger` in the Claude Code plugin, or `/panda-debugger` with a manual Claude Code copy. You can also ask the agent to investigate an exception, failing test, API error, production incident, or unexpected behavior. Supply the repository or relevant code, expected and actual behavior, logs, and reproduction steps when available. The agent should inspect available code before asking for missing details.
+Invoke `$panda-debugger` in Codex or `/panda-debugger` in Claude Code. You can also ask the agent to investigate an exception, failing test, API error, production incident, or unexpected behavior. Supply the repository or relevant code, expected and actual behavior, logs, and reproduction steps when available. The agent should inspect available code before asking for missing details.
 
 Example: “Use `$panda-debugger` to investigate this API error. Trace the request to the failure, identify the root cause with evidence, and propose a fix.”
 
