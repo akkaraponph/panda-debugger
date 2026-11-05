@@ -4,10 +4,10 @@ Write in clear B2-level English. Prefer short sentences and familiar words. Keep
 
 ## Root cause at a glance
 
-- **[CONFIRMED / LIKELY / UNKNOWN] Primary cause:** One plain-English sentence that explains why the bug happens.
-- **[LIKELY / UNKNOWN] Possible cause:** Add this bullet only when another explanation remains open. State the check needed to decide.
+- **[CONFIRMED / LIKELY] Primary cause:** One plain-English sentence that explains why the bug happens. For LIKELY, name the missing check.
+- **[UNKNOWN] Leading hypothesis:** Use this label when the cause is not established. State the check needed to decide.
 
-Use one bullet per cause. Put the primary cause first. Do not show unused bullets in the final report.
+Use one bullet per cause. Put a confirmed or likely primary cause first; if none is established, lead with a clearly labeled hypothesis. Do not show unused bullets in the final report.
 
 ## 1. Problem Summary
 
@@ -39,11 +39,11 @@ If several components, branches, or asynchronous steps make the path hard to fol
 
 Use one bullet per material cause, in the same order as the opening summary. Keep the first line short; add only the details needed to support it:
 
-- **[CONFIRMED / LIKELY / UNKNOWN] Primary cause: …**
+- **[CONFIRMED / LIKELY] Primary cause: …**
   - **Why this caused the bug:** …
   - **Evidence:** …
   - **What is still unclear:** … (omit if nothing remains unclear)
-- **[LIKELY / UNKNOWN] Possible cause: …**
+- **[LIKELY / UNKNOWN] Possible cause or leading hypothesis: …**
   - **Evidence for and against it:** …
   - **Check needed:** …
 
@@ -51,7 +51,7 @@ If a separate defect helped cause the failure, label it **Contributing factor**.
 
 ## 7. Proposed Fix
 
-Explain the smallest change, why it addresses the cause, affected components, relevant alternatives, and regression risk. State whether it was implemented.
+Explain the smallest change, why it addresses the cause, affected files, relevant alternatives, regression risk, and verification plan. State **Approval needed** before editing for an investigation-only request. If the user already explicitly requested implementation, record that authorization and the change made.
 
 ## 8. Test Cases
 

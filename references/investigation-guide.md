@@ -33,6 +33,8 @@ Map input → entry point → transformations and dependencies → failure. Insp
 
 For each candidate, ask: Does it explain the observed behavior? What evidence contradicts it? What check would distinguish it from competing explanations? Mark the cause CONFIRMED, LIKELY, or UNKNOWN. A LIKELY cause supports a conditional recommendation; it does not support a claim that the defect was proven.
 
+For an investigation-only request, finish the causal explanation and a file-level fix and test plan, then ask for approval before editing. Do not use an approval question in place of investigation. If the user explicitly requested implementation, proceed under that authorization.
+
 ### Fix → Verify
 
 Connect the change to the causal mechanism. Check the original failure, normal behavior, and the important boundary cases. Use existing test conventions. Report each test as Passed, Failed, Not Run, or Blocked with its actual command or reason. A static review may support a proposal, but cannot establish a runtime fix.
