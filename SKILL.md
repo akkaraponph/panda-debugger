@@ -26,4 +26,6 @@ Write the report in clear B2-level English. Use short, direct sentences and comm
 
 Use [the report template](references/report-template.md) for a substantial investigation. Keep each section concise and mark unavailable evidence explicitly. For a small bug, compress the presentation while preserving the causal trace, confidence level, verification status, and remaining risk.
 
+For a path with several components, branches, or asynchronous steps, include a small Mermaid flowchart in **Execution Flow** when it makes the cause easier to understand. Show only steps supported by evidence; label inferred steps. If a diagram could help but is not needed in the main report, end with a brief optional offer: “I can also draw a Mermaid flowchart of this path if useful.” Skip the diagram and offer for simple cases. Never let a diagram replace the root-cause explanation or evidence.
+
 Read [the investigation guide](references/investigation-guide.md) when the defect involves multiple layers, transactions, asynchronous work, or conflicting evidence. It contains phase gates and examples of how to separate observations from inferences.
