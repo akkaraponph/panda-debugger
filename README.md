@@ -44,8 +44,37 @@ To update a manual installation, run `git pull --ff-only` in the clone, then rep
 
 ## Use
 
-Invoke `$panda-debugger` in Codex, `/panda-debugger:panda-debugger` with the Claude Code plugin, or `/panda-debugger` with a manual Claude Code copy. Ask it to investigate an exception, failing test, API error, or unexpected behavior. Share the relevant code or repository, expected and actual behavior, logs, and steps to reproduce the problem when you have them.
+1. Open the project that has the bug in a new Codex or Claude Code session.
+2. Start your request with the name that matches your installation:
 
-Example: “Use `$panda-debugger` to investigate this API error. Trace the request to the failure, identify the root cause with evidence, and propose a fix.”
+   | Agent and installation | Start your request with |
+   | --- | --- |
+   | Codex (plugin or manual copy) | `$panda-debugger` |
+   | Claude Code plugin | `/panda-debugger:panda-debugger` |
+   | Claude Code manual copy | `/panda-debugger` |
 
-The answer starts with short, plain-English root-cause bullets and shows the evidence, confidence level, and checks that were run. For a complex path, you can ask for a Mermaid flowchart. If you ask only for an investigation, the agent will propose a fix and ask before changing code. If you ask it to fix the bug, it can implement and verify the change.
+3. Describe the bug. Include what you expected, what happened instead, and how to reproduce it. Add an error message, failing test, log, screenshot, or relevant file path if you have one. You can still start with an incomplete report; the agent will inspect the available project files and say what evidence is missing.
+
+For an investigation without code changes, copy this prompt and replace the example details:
+
+```text
+$panda-debugger Investigate the search results bug. When I type a new query,
+results from the previous query sometimes replace the newer results.
+Expected: results always match the latest query.
+Reproduce: type two different queries quickly on the search page.
+Find the cause, show the evidence, and propose a fix. Do not edit code yet.
+```
+
+The example uses the Codex name. In Claude Code, replace the first word with the matching name from the table.
+
+If you want the agent to make the fix as part of the same request, say so explicitly:
+
+```text
+$panda-debugger Investigate and fix this bug: when I type two search queries
+quickly, results from the first query sometimes replace the latest results.
+Expected: results always match the latest query.
+Reproduce: type two different queries quickly on the search page.
+Add a regression test, run the relevant checks, and report what passed.
+```
+
+The agent reports the cause with a confidence label, the evidence it found, and the checks it actually ran. An investigation-only request ends with a proposed fix for your approval. A request to fix the bug authorizes the agent to edit and verify the code. If a check cannot run or the cause remains uncertain, the report should say so. For a complex execution path, you can also ask for a Mermaid flowchart.
